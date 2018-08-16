@@ -1,0 +1,22 @@
+﻿<Window x:Class="ForlystelsesService.GUI.ViewReports"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ForlystelsesService.GUI"
+        mc:Ignorable="d"
+        Title="ViewReports" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="DGReports" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="475" SelectionChanged="DGReports_SelectionChanged"/>
+        <TextBlock x:Name="TxtBlockRide" HorizontalAlignment="Left" Margin="509,33,0,0" TextWrapping="Wrap" Text="Forlystelse:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtBlockRideName" HorizontalAlignment="Left" Margin="697,39,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtBlockRideStatus" HorizontalAlignment="Left" Margin="518,91,0,0" TextWrapping="Wrap" Text="Status:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtBlockSelectedRideStatus" HorizontalAlignment="Left" Margin="697,91,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtBlockReportDate" HorizontalAlignment="Left" Margin="518,152,0,0" TextWrapping="Wrap" Text="Dato for Rapport:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtBlockSelectedReportDate" HorizontalAlignment="Left" Margin="692,156,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtBlockReportNotes" HorizontalAlignment="Left" Margin="528,214,0,0" TextWrapping="Wrap" Text="Noter:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtBlockSelectedReportNotes" HorizontalAlignment="Left" Margin="526,249,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="BtnClose" Content="Luk" HorizontalAlignment="Left" Margin="709,391,0,0" VerticalAlignment="Top" Width="75" Click="BtnClose_Click"/>
+
+    </Grid>
+</Window>

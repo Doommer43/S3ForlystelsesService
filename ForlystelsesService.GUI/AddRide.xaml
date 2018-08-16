@@ -1,0 +1,18 @@
+﻿<Window x:Class="ForlystelsesService.GUI.AddRide"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ForlystelsesService.GUI"
+        mc:Ignorable="d"
+        Title="AddRide" Height="154.2" Width="236">
+    <Grid>
+        <TextBox x:Name="TxtBoxRideName" HorizontalAlignment="Left" Height="23" Margin="95,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="TxtBlockRideName" HorizontalAlignment="Left" Margin="24,15,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtBlockRideCategory" HorizontalAlignment="Left" Margin="24,43,0,0" TextWrapping="Wrap" Text="Kategori:" VerticalAlignment="Top"/>
+        <Button x:Name="BtnSave" Content="Gem og luk" HorizontalAlignment="Left" Margin="24,96,0,0" VerticalAlignment="Top" Width="75" Click="BtnSave_Click"/>
+        <Button x:Name="BtnCancel" Content="Fortryd" HorizontalAlignment="Left" Margin="140,96,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
+        <ComboBox x:Name="ComBoxRideCategori" HorizontalAlignment="Left" Margin="95,43,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
