@@ -18,7 +18,7 @@ using ForlystelsesService.DBHandler;
 namespace ForlystelsesService.GUI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Class containing the logic for the application's main window. Inherits from Window
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -31,14 +31,14 @@ namespace ForlystelsesService.GUI
             DGForlystelser.ItemsSource = rides;
             
         }
-
+        
         private void DGForlystelser_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Ride s_ride = (Ride)DGForlystelser.SelectedItem;
+            Ride sRide = (Ride)DGForlystelser.SelectedItem;
 
-            TxtBlockSelectedRideName.Text = s_ride.Name;
-            TxtBlockSelectedRideCategory.Text = s_ride.Category;
-            TxtBlockSelectedRideStatus.Text = s_ride.Status;
+            TxtBlockSelectedRideName.Text = sRide.Name;
+            TxtBlockSelectedRideCategory.Text = sRide.Category;
+            TxtBlockSelectedRideStatus.Text = sRide.Status;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

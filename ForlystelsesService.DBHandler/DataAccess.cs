@@ -8,13 +8,19 @@ using Entities;
 
 namespace ForlystelsesService.DBHandler
 {
+    /// <summary>
+    /// Regulates all access to the database. Inherits from CommenDataAccess; inheritance
+    /// </summary>
     public class DataAccess : CommonDataAccess
     {
         public DataAccess(string conString) : base(conString)
         {
 
         }
-
+        /// <summary>
+        /// Compiles a list of all rides currently in the database
+        /// </summary>
+        /// <returns>Returns all rides in as a List.Ride item</returns>
         public List<Ride> GetAllRides()
         {
             string query = $"SELECT * FROM Rides";
@@ -35,7 +41,11 @@ namespace ForlystelsesService.DBHandler
             }
             return rides;
         }
-
+        /// <summary>
+        /// Compiles a list of all reports currently in the database
+        /// </summary>
+        /// <param name="ride"></param>
+        /// <returns>Returns all reports in as a List.Report item</returns>
         public List<Report> GetAllReports(Ride ride)
         {
             string query = $"SELECT * FROM Reports WHERE rideId = {ride.Id}";
@@ -55,21 +65,33 @@ namespace ForlystelsesService.DBHandler
             }
             return reports;
         }
-
+        /// <summary>
+        /// Saves the given ride in the database. This is a polymorphic method
+        /// </summary>
+        /// <param name="ride"></param>
+        /// <returns>Returns number of rows affected</returns>
         public int Save (Ride ride)
         {
             string sqlQuery = $"INSERT INTO Rides (name, category, status) VALUES ('{ride.Name}', '{ride.Category}', '{ride.Status}')";
             int rowsAffected = ExecuteNonQuery(sqlQuery);
             return rowsAffected;
         }
-
+        /// <summary>
+        /// Saves the given report in the database. This is a polymorphic method
+        /// </summary>
+        /// <param name="report"></param>
+        /// <returns>Returns number of rows affected</returns>
         public int Save (Report report)
         {
             string sqlQuery = $"INSERT INTO Reports (status, reportTime, notes, rideId) VALUES ('{report.Status}', '{report.ReportTime.ToString("yyyy-MM-dd")}', '{report.Notes}', '{report.Ride.Id}')";
             int rowsAffected = ExecuteNonQuery(sqlQuery);
             return rowsAffected;
         }
-
+        /// <summary>
+        /// Updates the status of the given ride
+        /// </summary>
+        /// <param name="ride"></param>
+        /// <returns>Returns number of rows affected</returns>
         public int UpdateStatus (Ride ride)
         {
             string query = $"UPDATE Rides SET status = '{ride.Status}' WHERE id = '{ride.Id}'";

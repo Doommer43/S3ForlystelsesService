@@ -16,10 +16,14 @@ using Entities;
 namespace ForlystelsesService.GUI
 {
     /// <summary>
-    /// Interaction logic for AddReport.xaml
+    /// Class used for creating a new class from user input
     /// </summary>
     public partial class AddReport : Window
     {
+        /// <summary>
+        /// Constructor for AddReport class
+        /// </summary>
+        /// <param name="ride">Recieved from the currently selected ride in DGForlystelser</param>
         public AddReport(Ride ride)
         {
             InitializeComponent();
@@ -32,7 +36,7 @@ namespace ForlystelsesService.GUI
 
             ComBoxRideStatus.ItemsSource = status;
         }
-
+        
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
